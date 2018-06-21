@@ -30,8 +30,8 @@
           <a class="dropdown-item" href="consolehotel.php">Console de hotel</a>
         </div>
       </li>
-        <form class="form-inline" method="post" action="database.php">
-            <button class="btn btn-danger" name="logout" type="submit">Sair</button>
+        <form class="form-inline">
+            <button class="btn btn-danger" name="logout"><a href="logout.php">Sair</a></button>
         </form>
     </ul>
   </div>

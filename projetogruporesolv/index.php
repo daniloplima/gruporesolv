@@ -1,4 +1,14 @@
- <?php include'database.php' ?>
+<?php 
+if(isset(($_GET['l']))) {
+if($_GET['l'] == 'f'){
+    echo '<script>alert("Login falhou")</script>';
+}
+if($_GET['l'] == 'q'){
+    echo '<script>alert("Deslogado")</script>';
+}    
+}
+
+?>
 <!doctype html>
 <HTML>
 <head>
@@ -10,7 +20,7 @@
 </head>
 <body>
     <div class="container">
-        <form method="post" action="database.php">
+        <form method="post" action="login.php">
               <div class="form-group">
                 <label><h3>E-mail</h3></label>
                 <input type="email" class="form-control"  placeholder="Nome" name="email_login">
