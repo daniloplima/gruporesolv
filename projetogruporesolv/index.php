@@ -18,8 +18,8 @@ if($_GET['l'] == 'q'){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <title>Login</title>
 </head>
-<body>
-    <div class="container">
+<body style="background-image: url('img/07.jpg');">
+    <div class="container" style="border-radius: 15px; margin: 100px 100px 100px 100px;">
         <form method="post" action="login.php">
               <div class="form-group">
                 <label><h3>E-mail</h3></label>

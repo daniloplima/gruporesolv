@@ -17,8 +17,7 @@ if(!isset($_SESSION['email'])){
 </head>
 <body>
  <?php include'navbar.php' ?>
-    <br>
-    <div class="container">
+    <div class="container" style="border-radius: 15px; margin: 100px 100px 100px 100px;">
         <form method="post" action="database.php">
               <div class="form-group">
                 <label>Nome</label>

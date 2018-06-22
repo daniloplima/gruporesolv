@@ -17,7 +17,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if(isset($_POST['buscar_usuario'])){ 
 $buscador = $_POST['procura_usuario'];
  $query = "SELECT * FROM tb_usuario WHERE nm_usuario = '$buscador'";
- $list = mysqli_query($conn, $query);
+ $listusuario = mysqli_query($conn, $query);
 }
 else {
  $query = "SELECT * FROM tb_usuario";
@@ -38,12 +38,12 @@ else {
 <body>
     <?php include'navbar.php' ?>
     <br>
-    <div class="container"> 
+    <div class="container" style="border-radius: 25px;"> 
     <form method="post">
         <div class="form-group">
-            <label>Nome</label>
+            <label><h3>Nome</h3></label>
             <input type="text" style="display: inline;" class="form-control"  placeholder="Nome" name="procura_usuario">
-            <button type="submit" name="buscar_usuario" class="btn glyphicon glyphicon-search">Buscar usuario</button>
+            <button type="submit" name="buscar_usuario" style="margin-top: 10px; margin-bottom: 10px;" class="btn btn-primary">Buscar usuario</button>
         </div>
     </form>
     </div>  
@@ -61,12 +61,12 @@ else {
         <?php while ($row = mysqli_fetch_array($listusuario)) { ?>
             <tr>
                 <form action="database.php" method="post">
-                <td><?php echo "<span class='data-visible data-". $row['cd_usuario']."'>" . $row['nm_usuario'] . "</span><input type='text' class='edit-input-invisible' name='at_nome_usuario' id='user-". $row['cd_usuario'] ."'>"?></td>
-                <td><?php echo "<span class='data-visible data-". $row['cd_usuario']."''>" . $row['nm_email'] . "</span><input type='email' class='edit-input-invisible' name='at_email_usuario' id='email-". $row['cd_usuario'] ."'>"?></td>
-                <td><?php echo "<span class='data-visible data-". $row['cd_usuario']."''>" . $row['cd_senha'] . "</span><input type='password' class='edit-input-invisible' name='at_senha_usuario' id='password-". $row['cd_usuario'] ."'>"?></td>
-                <td><button type="button" onclick="editUsuario(<?php echo $row['cd_usuario'] ?>)">Editar</button> 
-                    <?php echo "<button type='submit' name='atualizar_usuario' class='edit-btn-invisible' id='btnatt-". $row['cd_usuario'] ."'>Atualizar</button>" ?>
-                    <?php echo "<button type='submit' name='deletar_usuario' id='btndlt-". $row['cd_usuario'] ."'>Deletar</button>" ?>
+                <td><?php echo "<span class='data-visible data-". $row['cd_usuario']."'>" . $row['nm_usuario'] . "</span><input type='text' class='edit-input-invisible' name='at_nome_usuario' style='width: 100%; padding: 0.375rem 0.75rem; font-size: 1rem; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border: 1px solid #ced4da; border-radius: 0.25rem; transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;' id='user-". $row['cd_usuario'] ."'>"?></td>
+                <td><?php echo "<span class='data-visible data-". $row['cd_usuario']."''>" . $row['nm_email'] . "</span><input type='email' class='edit-input-invisible' style='width: 100%; padding: 0.375rem 0.75rem; font-size: 1rem; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border: 1px solid #ced4da; border-radius: 0.25rem; transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;' name='at_email_usuario' id='email-". $row['cd_usuario'] ."'>"?></td>
+                <td><?php echo "<span class='data-visible data-". $row['cd_usuario']."''>" . $row['cd_senha'] . "</span><input type='password' class='edit-input-invisible' style='width: 100%; padding: 0.375rem 0.75rem; font-size: 1rem; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border: 1px solid #ced4da; border-radius: 0.25rem; transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;' name='at_senha_usuario' id='password-". $row['cd_usuario'] ."'>"?></td>
+                <td><button type="button" class="btn btn-primary" onclick="editUsuario(<?php echo $row['cd_usuario'] ?>)">Editar</button> 
+                    <?php echo "<button type='submit' style='color: #fff; background-color: #28a745;  border-color: #28a745;   font-weight: 400;  text-align: center;  white-space: nowrap;  vertical-align: middle;  -webkit-user-select: none;  -moz-user-select: none;  -ms-user-select: none;  user-select: none;  border: 1px solid transparent;  padding: 0.375rem 0.75rem;  font-size: 1rem;  line-height: 1.5;  border-radius: 0.25rem;' name='atualizar_usuario' class='edit-btn-invisible' id='btnatt-". $row['cd_usuario'] ."'>Atualizar</button>" ?>
+                    <?php echo "<button type='submit' class='btn btn-danger' name='deletar_usuario' id='btndlt-". $row['cd_usuario'] ."'>Deletar</button>" ?>
                 </td>
                 <input type="hidden" name="ref_cd_usuario" value="<?php echo $row['cd_usuario']?>"> 
                 </form>

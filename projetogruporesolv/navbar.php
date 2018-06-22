@@ -9,7 +9,6 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand">E-commerce</a>
-  <span class="navbar-brand mb-0 h1">Logado como: </span>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
@@ -31,7 +30,7 @@
         </div>
       </li>
         <form class="form-inline">
-            <button class="btn btn-danger" name="logout"><a href="logout.php">Sair</a></button>
+            <button class="btn btn-danger" name="logout"><a style="color: inherit;" href="logout.php">Sair</a></button>
         </form>
     </ul>
   </div>
